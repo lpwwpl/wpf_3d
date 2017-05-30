@@ -1,0 +1,16 @@
+﻿<Window x:Class="GeometryViz3D.Views.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:cp="http://schemas.charlespetzold.com/2007/xaml"
+    xmlns:local="clr-namespace:GeometryViz3D"
+    xmlns:localview="clr-namespace:GeometryViz3D.Views"
+    Title="Geometry 3D" MinHeight="400" MinWidth="400" Loaded="Window_Loaded"   WindowStyle="ThreeDBorderWindow">
+    <Window.Resources>
+        <DataTemplate x:Key="endPointComboBoxItemTemplate">
+            <TextBlock Text="{Binding}" />
+        </DataTemplate>
+    </Window.Resources>
+    <DockPanel LastChildFill ="True" Name ="panel">      
+        <localview:G3DViewport Grid.Column="2" x:Name="viewport" Width="Auto" Height="Auto" Margin="1, 1, 1, 1" />
+    </DockPanel>
+</Window>

@@ -1,0 +1,32 @@
+﻿<Application x:Class="GeometryViz3D.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:GeometryViz3D.ValueConverters"             
+    StartupUri="Views/MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/PresentationFramework.Aero, Version=3.0.0.0,
+                   Culture=neutral, PublicKeyToken=31bf3856ad364e35,
+                   ProcessorArchitecture=MSIL;component/themes/aero.normalcolor.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <local:DoubleAdditionConverter x:Key="doubleAdditionConverter" />
+            <local:DoubleMultiplicationConverter x:Key="doubleMultiplicationConverter" />
+
+            <DataTemplate x:Key="colorComboBoxItemTemplate">
+                <Rectangle Fill="{Binding Mode=OneTime}" 
+                           Height="{Binding Mode=OneTime, 
+                                        RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ComboBox}}, 
+                                        Path=FontSize,
+                                        Converter={StaticResource doubleAdditionConverter},
+                                        ConverterParameter=2}" 
+                           Width="{Binding Mode=OneTime, 
+                                        RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ComboBox}}, 
+                                        Path=ActualWidth,
+                                        Converter={StaticResource doubleAdditionConverter},
+                                        ConverterParameter=-4}" />
+            </DataTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

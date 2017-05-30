@@ -1,0 +1,1148 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>StateMachineToolkit</name>
+    </assembly>
+    <members>
+        <member name="T:StateMachineToolkit.ActionInitializeBuilder">
+            <summary>
+            Builds the method responsible for initializing the action delegates.
+            </summary>
+        </member>
+        <member name="M:StateMachineToolkit.ActionInitializeBuilder.#ctor(System.Collections.ICollection)">
+            <summary>
+            Initializes a new instance of the ActionInitializeBuilder with the
+            specified action table.
+            </summary>
+            <param name="actions">
+            The actions from which the ActionHandler delegates are initialized.
+            </param>
+        </member>
+        <member name="M:StateMachineToolkit.ActionInitializeBuilder.Build">
+            <summary>
+            Builds the method.
+            </summary>
+        </member>
+        <member name="P:StateMachineToolkit.ActionInitializeBuilder.Result">
+            <summary>
+            Gets the built method.
+            </summary>
+        </member>
+        <member name="T:StateMachineToolkit.ConstructorBuilder">
+            <summary>
+            Builds the state machine's constructor.
+            </summary>
+        </member>
+        <member name="M:StateMachineToolkit.ConstructorBuilder.Build">
+            <summary>
+            Builds the constructors.
+            </summary>
+        </member>
+        <member name="P:StateMachineToolkit.ConstructorBuilder.Result">
+            <summary>
+            Gets the collection built constructors.
+            </summary>
+        </member>
+        <member name="P:StateMachineToolkit.ConstructorBuilder.InitialState">
+            <summary>
+            Gets or sets the state machine's initial state.
+            </summary>
+        </member>
+        <member name="T:StateMachineToolkit.EventIDBuilder">
+            <summary>
+            Builds the event identifiers.
+            </summary>
+        </member>
+        <member name="T:StateMachineToolkit.FieldBuilder">
+            <summary>
+            Builds the fields belonging to the state machine.
+            </summary>
+        </member>
+        <member name="M:StateMachineToolkit.FieldBuilder.#ctor(System.Collections.ICollection,System.Collections.ICollection,System.Collections.ICollection,System.Collections.ICollection)">
+            <summary>
+            Initializes a new instance of the FieldBuilder class with the 
+            specified state, guard, and action tables.
+            </summary>
+            <param name="state">
+            The states from which to declare the State object fields.
+            </param>
+            <param name="events">
+            The events from which to declare the event ID fields.
+            </param>
+            <param name="guard">
+            The guards from which to declare the GuardHandler delegate fields.
+            </param>
+            <param name="action">
+            The actions from which to declare the ActionHandler delegate fields.
+            </param>
+        </member>
+        <member name="M:StateMachineToolkit.FieldBuilder.Build">
+            <summary>
+            Builds the fields.
+            </summary>
+        </member>
+        <member name="P:StateMachineToolkit.FieldBuilder.Result">
+            <summary>
+            Gets the collection of built fields.
+            </summary>
+        </member>
+        <member name="T:StateMachineToolkit.GuardInitializeBuilder">
+            <summary>
+            Builds the method responsible for initializing the guard delegates.
+            </summary>
+        </member>
+        <member name="M:StateMachineToolkit.GuardInitializeBuilder.#ctor(System.Collections.ICollection)">
+            <summary>
+            Initializes a new instance of the GuardInitializeBuilder class.
+            </summary>
+            <param name="guards">
+            The guards from which the GuardHandler delegates are initialized.
+            </param>
+        </member>
+        <member name="M:StateMachineToolkit.GuardInitializeBuilder.Build">
+            <summary>
+            Builds the method.
+            </summary>
+        </member>
+        <member name="P:StateMachineToolkit.GuardInitializeBuilder.Result">
+            <summary>
+            Gets the built method.
+            </summary>
+        </member>
+        <member name="T:StateMachineToolkit.HistoryInitializeBuilder">
+            <summary>
+            Builds the method responsible for initializing states' history type.
+            </summary>
+        </member>
+        <member name="M:StateMachineToolkit.HistoryInitializeBuilder.#ctor(System.Collections.IDictionary)">
+            <summary>
+            Initializes a new instance of the HistoryInitializeBuilder class.
+            </summary>
+            <param name="stateHistoryTypes">
+            The states and their history types.
+            </param>
+        </member>
+        <member name="M:StateMachineToolkit.HistoryInitializeBuilder.Build">
+            <summary>
+            Builds the method.
+            </summary>
+        </member>
+        <member name="P:StateMachineToolkit.HistoryInitializeBuilder.Result">
+            <summary>
+            Gets the built method.
+            </summary>
+        </member>
+        <member name="T:StateMachineToolkit.InitializeMethodBuilder">
+            <summary>
+            Builds all of the methods responsible for initializing the state 
+            machine members.
+            </summary>
+        </member>
+        <member name="M:StateMachineToolkit.InitializeMethodBuilder.#ctor(System.Collections.ICollection,System.Collections.ICollection,System.Collections.ICollection,System.Collections.ICollection,System.Collections.IDictionary,System.Collections.IDictionary,System.Collections.IDictionary,System.Collections.IDictionary)">
+            <summary>
+            Initializes a new instance of the InitializeMethodBuilder class
+            with the tables necessary for building the methods.
+            </summary>
+            <param name="states">
+            The state machine's states.
+            </param>
+            <param name="evets">
+            The state machine's events.
+            </param>
+            <param name="guards">
+            The state machine's guards.
+            </param>
+            <param name="actions">
+            The state machine's actions.
+            </param>
+            <param name="stateTransitions">
+            The state transitions.
+            </param>
+            <param name="stateRelationships">
+            The substate/superstate relationships.
+            </param>
+            <param name="stateHistoryTypes">
+            The state history types.
+            </param>
+            <param name="stateInitialStates">
+            The states' initial states.
+            </param>
+        </member>
+        <member name="M:StateMachineToolkit.InitializeMethodBuilder.Build">
+            <summary>
+            Builds the methods.
+            </summary>
+        </member>
+        <member name="P:StateMachineToolkit.InitializeMethodBuilder.Result">
+            <summary>
+            Gets the collection of built methods.
+            </summary>
+        </member>
+        <member name="T:StateMachineToolkit.InitialStateInitializeBuilder">
+            <summary>
+            Builds the method responsible for initializing states' initial state.
+            </summary>
+        </member>
+        <member name="M:StateMachineToolkit.InitialStateInitializeBuilder.#ctor(System.Collections.IDictionary)">
+            <summary>
+            Initializes a new instance of the InitialStateInitializeBuilder 
+            class.
+            </summary>
+            <param name="stateInitialStates">
+            The states and their initial states. 
+            </param>
+        </member>
+        <member name="M:StateMachineToolkit.InitialStateInitializeBuilder.Build">
+            <summary>
+            Builds the method.
+            </summary>
+        </member>
+        <member name="T:StateMachineToolkit.MethodBuilder">
+            <summary>
+            Builds the methods that make up the state machine.
+            </summary>
+        </member>
+        <member name="M:StateMachineToolkit.MethodBuilder.#ctor(System.Collections.ICollection,System.Collections.ICollection,System.Collections.ICollection,System.Collections.ICollection,System.Collections.IDictionary,System.Collections.IDictionary,System.Collections.IDictionary,System.Collections.IDictionary)">
+            <summary>
+            Initializes a new instance of the MethodBuilder class with all
+            of the tables necessary to build the state machine methods.
+            </summary>
+            <param name="states">
+            The state machine's states.
+            </param>
+            <param name="evets">
+            The state machine's events.
+            </param>
+            <param name="guards">
+            The state machine's guards.
+            </param>
+            <param name="actions">
+            The state machine's actions.
+            </param>
+            <param name="stateTransitions">
+            The state transitions.
+            </param>
+            <param name="stateRelationships">
+            The substate/superstate relationships.
+            </param>
+            <param name="stateHistoryTypes">
+            The state history types.
+            </param>
+            <param name="stateInitialStates">
+            The states' initial states.
+            </param>
+        </member>
+        <member name="M:StateMachineToolkit.MethodBuilder.Build">
+            <summary>
+            Builds the methods for the state machine.
+            </summary>
+        </member>
+        <member name="P:StateMachineToolkit.MethodBuilder.Result">
+            <summary>
+            Gets the collection of built methods.
+            </summary>
+        </member>
+        <member name="P:StateMachineToolkit.MethodBuilder.InitialState">
+            <summary>
+            Gets or sets the state machine's initial state.
+            </summary>
+        </member>
+        <member name="T:StateMachineToolkit.RelationshipInitializeBuilder">
+            <summary>
+            Builds the method responsible for initializing the substate/superstate 
+            relationships between states.
+            </summary>
+        </member>
+        <member name="M:StateMachineToolkit.RelationshipInitializeBuilder.#ctor(System.Collections.IDictionary)">
+            <summary>
+            Initializes a new instance of the RelationshipInitializeBuilder
+            with the specified relationship table.
+            </summary>
+            <param name="stateRelationship">
+            The relationships between substates and superstates.
+            </param>
+        </member>
+        <member name="M:StateMachineToolkit.RelationshipInitializeBuilder.Build">
+            <summary>
+            Builds the method.
+            </summary>
+        </member>
+        <member name="P:StateMachineToolkit.RelationshipInitializeBuilder.Result">
+            <summary>
+            Gets the built method.
+            </summary>
+        </member>
+        <member name="T:StateMachineToolkit.StateInitializeBuilder">
+            <summary>
+            Builds the method responsible for initializing the states.
+            </summary>
+        </member>
+        <member name="M:StateMachineToolkit.StateInitializeBuilder.#ctor(System.Collections.ICollection,System.Collections.ICollection)">
+            <summary>
+            Initializes a new instance of the StateInitializeBuilder class with
+            specified state and event tables.
+            </summary>
+            <param name="states">
+            The states to be initialized.
+            </param>
+            <param name="events">
+            The  events the state machine responds to.
+            </param>
+        </member>
+        <member name="M:StateMachineToolkit.StateInitializeBuilder.Build">
+            <summary>
+            Builds the method.
+            </summary>
+        </member>
+        <member name="P:StateMachineToolkit.StateInitializeBuilder.Result">
+            <summary>
+            Gets the build method.
+            </summary>
+        </member>
+        <member name="T:StateMachineToolkit.TransitionInitializeBuilder">
+            <summary>
+            Builds the method responsible for initializing the transitions.
+            </summary>
+        </member>
+        <member name="M:StateMachineToolkit.TransitionInitializeBuilder.#ctor(System.Collections.IDictionary)">
+            <summary>
+            Initializes a new instance of the TransitionInitializeBuilder class
+            with the specified state transition table.
+            </summary>
+            <param name="stateTransitions">
+            The state transitions. 
+            </param>
+        </member>
+        <member name="M:StateMachineToolkit.TransitionInitializeBuilder.Build">
+            <summary>
+            Builds the method.
+            </summary>
+        </member>
+        <member name="P:StateMachineToolkit.TransitionInitializeBuilder.Result">
+            <summary>
+            Gets the built method.
+            </summary>
+        </member>
+        <member name="T:StateMachineToolkit.StateMachineBuilder">
+            <summary>
+            Generates code for state machine base classes.
+            </summary>
+        </member>
+        <member name="M:StateMachineToolkit.StateMachineBuilder.Build">
+            <summary>
+            Builds the state machine.
+            </summary>
+        </member>
+        <member name="M:StateMachineToolkit.StateMachineBuilder.Clear">
+            <summary>
+            Clears the builder of all states and transitions, and resets its 
+            properties to their default values. 
+            </summary>
+        </member>
+        <member name="P:StateMachineToolkit.StateMachineBuilder.Result">
+            <summary>
+            Gets the result of building the state machine.
+            </summary>
+        </member>
+        <member name="P:StateMachineToolkit.StateMachineBuilder.States">
+            <summary>
+            Gets the collection of StateRows that represent the state machine's
+            top level states.
+            </summary>
+        </member>
+        <member name="P:StateMachineToolkit.StateMachineBuilder.NamespaceName">
+            <summary>
+            Gets or sets the name of the namespace in which the state machine
+            resides.
+            </summary>
+        </member>
+        <member name="P:StateMachineToolkit.StateMachineBuilder.StateMachineName">
+            <summary>
+            Gets or sets the name of the state machine.
+            </summary>
+        </member>
+        <member name="P:StateMachineToolkit.StateMachineBuilder.InitialState">
+            <summary>
+            Gets or sets the initial state of the state machine.
+            </summary>
+        </member>
+        <member name="T:StateMachineToolkit.StateMachineBuilderException">
+            <summary>
+            The exception that is thrown when the StateMachineBuilder encounters
+            an error while building a state machine.
+            </summary>
+        </member>
+        <member name="T:StateMachineToolkit.StateRow">
+            <summary>
+            Represents a row of data describing a state in a StateRowCollection.
+            </summary>
+        </member>
+        <member name="M:StateMachineToolkit.StateRow.#ctor">
+            <summary>
+            Initializes a new instance of the StateRow class.
+            </summary>
+        </member>
+        <member name="M:StateMachineToolkit.StateRow.BeginEdit">
+            <summary>
+            Begins an edit on a StateRow.
+            </summary>
+        </member>
+        <member name="M:StateMachineToolkit.StateRow.CancelEdit">
+            <summary>
+            Discards changes since the last BeginEdit call.
+            </summary>
+        </member>
+        <member name="M:StateMachineToolkit.StateRow.EndEdit">
+            <summary>
+            Pushes changes since the last BeginEdit or IBindingList.AddNew call 
+            into the underlying StateRow.
+            </summary>
+        </member>
+        <member name="E:StateMachineToolkit.StateRow.EditCancelled">
+            <summary>
+            Raised when an edit has been cancelled.
+            </summary>
+        </member>
+        <member name="P:StateMachineToolkit.StateRow.Name">
+            <summary>
+            Gets or sets the state's name.
+            </summary>
+        </member>
+        <member name="P:StateMachineToolkit.StateRow.InitialState">
+            <summary>
+            Gets or sets the state's initial state.
+            </summary>
+        </member>
+        <member name="P:StateMachineToolkit.StateRow.HistoryType">
+            <summary>
+            Gets or sets the state's initial state.
+            </summary>
+        </member>
+        <member name="P:StateMachineToolkit.StateRow.Substates">
+            <summary>
+            Gets the state's substates.
+            </summary>
+        </member>
+        <member name="P:StateMachineToolkit.StateRow.Transitions">
+            <summary>
+            Gets the states transitions.
+            </summary>
+        </member>
+        <member name="T:StateMachineToolkit.StateRowCollection">
+            <summary>
+            Represents a collection of StateRows.
+            </summary>
+        </member>
+        <member name="M:StateMachineToolkit.StateRowCollection.#ctor">
+            <summary>
+            Initializes a new instance of the StateRowCollection class.
+            </summary>
+        </member>
+        <member name="M:StateMachineToolkit.StateRowCollection.Add(StateMachineToolkit.StateRow)">
+            <summary>
+            Adds a StateRow to the StateRowCollection.
+            </summary>
+            <param name="row">
+            The StateRow to add to the StateRowCollection.
+            </param>
+            <returns>
+            The position into which the StateRow was inserted into the 
+            StareRowCollection.
+            </returns>
+        </member>
+        <member name="M:StateMachineToolkit.StateRowCollection.Add(System.String)">
+            <summary>
+            Creates a StateRow based on the specified name and adds it to the
+            StateRowCollection.
+            </summary>
+            <param name="name">
+            The state name.
+            </param>
+            <returns>
+            The position into which the StateRow was inserted into the 
+            StareRowCollection.
+            </returns>
+        </member>
+        <member name="M:StateMachineToolkit.StateRowCollection.Add(System.String,System.String)">
+            <summary>
+            Creates a StateRow based on the specified name and initial state 
+            and adds it to the StateRowCollection.
+            </summary>
+            <param name="name">
+            The state name.
+            </param>
+            <param name="initialState">
+            The state's initial state.
+            </param>
+            <returns>
+            The position into which the StateRow was inserted into the 
+            StareRowCollection.
+            </returns>
+        </member>
+        <member name="M:StateMachineToolkit.StateRowCollection.Add(System.String,System.String,StateMachineToolkit.HistoryType)">
+            <summary>
+            Creates a StateRow based on the specified name, initial state, and
+            history type and adds it to the StateRowCollection.
+            </summary>
+            <param name="name">
+            The state name.
+            </param>
+            <param name="initialState">
+            The state's initial state.
+            </param>
+            <param name="historyType">
+            The state's history type.
+            </param>
+            <returns>
+            The position into which the StateRow was inserted into the 
+            StareRowCollection.
+            </returns>
+        </member>
+        <member name="P:StateMachineToolkit.StateRowCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets the StateRow at the specified index.
+            </summary>
+        </member>
+        <member name="T:StateMachineToolkit.TransitionRow">
+            <summary>
+            Represents a row of data describing a state transition in a 
+            TransitionRowCollection.
+            </summary>
+        </member>
+        <member name="M:StateMachineToolkit.TransitionRow.#ctor">
+            <summary>
+            Initializes a new instance of the TransitionRow class.
+            </summary>
+        </member>
+        <member name="M:StateMachineToolkit.TransitionRow.BeginEdit">
+            <summary>
+            Begins an edit on a TransitionRow.
+            </summary>
+        </member>
+        <member name="M:StateMachineToolkit.TransitionRow.CancelEdit">
+            <summary>
+            Discards changes since the last BeginEdit call.
+            </summary>
+        </member>
+        <member name="M:StateMachineToolkit.TransitionRow.EndEdit">
+            <summary>
+            Pushes changes since the last BeginEdit or IBindingList.AddNew call 
+            into the underlying StateRow.
+            </summary>
+        </member>
+        <member name="E:StateMachineToolkit.TransitionRow.EditCancelled">
+            <summary>
+            Raised when an edit has been cancelled.
+            </summary>
+        </member>
+        <member name="P:StateMachineToolkit.TransitionRow.Event">
+            <summary>
+            Gets the event that triggered the transition.
+            </summary>
+        </member>
+        <member name="P:StateMachineToolkit.TransitionRow.Guard">
+            <summary>
+            Gets the guard that is evaluated to determine whether or not the 
+            transition will fire.
+            </summary>
+        </member>
+        <member name="P:StateMachineToolkit.TransitionRow.Action">
+            <summary>
+            Gets the action that will be performed if the transition fires.
+            </summary>
+        </member>
+        <member name="P:StateMachineToolkit.TransitionRow.Target">
+            <summary>
+            Gets the target state of the transition.
+            </summary>
+        </member>
+        <member name="T:StateMachineToolkit.TransitionRowCollection">
+            <summary>
+            Represents a collection of TransitionRows.
+            </summary>
+        </member>
+        <member name="M:StateMachineToolkit.TransitionRowCollection.#ctor">
+            <summary>
+            Initializes a new instance of the TransitionRowCollection class.
+            </summary>
+        </member>
+        <member name="M:StateMachineToolkit.TransitionRowCollection.Add(StateMachineToolkit.TransitionRow)">
+            <summary>
+            Adds a TransitionRow to the TransitionRowCollection.
+            </summary>
+            <param name="row">
+            The TransitionRow to add to the TransitionRowCollection.
+            </param>
+            <returns>
+            The position into which the TransitionRow was inserted into the 
+            TransitionRowCollection.
+            </returns>
+        </member>
+        <member name="M:StateMachineToolkit.TransitionRowCollection.Add(System.String,System.String,System.String,System.String)">
+            <summary>
+            Creates a TransitionRow with the specified event, guard, action 
+            and target and adds it to the TransitionRowCollection.
+            </summary>
+            <param name="event">
+            The event that raised the transition.
+            </param>
+            <param name="guard">
+            The guard to evaluate whether or not the transition should fire.
+            </param>
+            <param name="action">
+            The action to perform if the transition fires.
+            </param>
+            <param name="target">
+            The target state of the transition.
+            </param>
+            <returns>
+            The position into which the TransitionRow was inserted into the 
+            TransitionRowCollection.
+            </returns>
+        </member>
+        <member name="P:StateMachineToolkit.TransitionRowCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets the TransitionRow at the specified index.
+            </summary>
+        </member>
+        <member name="T:StateMachineToolkit.DelegateQueue">
+            <summary>
+            Represents an asynchronous queue of delegates.
+            </summary>
+        </member>
+        <member name="M:StateMachineToolkit.DelegateQueue.#ctor">
+            <summary>
+            Initializes a new instance of the DelegateQueue class.
+            </summary>
+        </member>
+        <member name="M:StateMachineToolkit.DelegateQueue.OnExceptionOccurred(System.Exception)">
+            <summary>
+            Raises an event indicating that an exception has occurred.
+            </summary>
+            <param name="ex">
+            The exception object representing information about the exception.
+            </param>
+        </member>
+        <member name="M:StateMachineToolkit.DelegateQueue.Dispose">
+            <summary>
+            Disposes of the DelegateQueue.
+            </summary>
+        </member>
+        <member name="E:StateMachineToolkit.DelegateQueue.ExceptionOccurred">
+            <summary>
+            Occurs when an exception takes place as a result of a method 
+            invocation.
+            </summary>
+        </member>
+        <member name="E:StateMachineToolkit.DelegateQueue.Disposed">
+            <summary>
+            Represents the method that handles the Disposed delegate of an DelegateQueue.
+            </summary>
+        </member>
+        <member name="P:StateMachineToolkit.DelegateQueue.Site">
+            <summary>
+            Gets or sets the ISite associated with the DelegateQueue.
+            </summary>
+        </member>
+        <member name="T:StateMachineToolkit.DelegateQueue.DelegateQueueAsyncResult">
+            <summary>
+            Implements the IAsyncResult interface for the DelegateQueue class.
+            </summary>
+        </member>
+        <member name="T:StateMachineToolkit.ExceptionEventHandler">
+            <summary>
+            Represents the method that handles the ExceptionOccurred event.
+            </summary>
+        </member>
+        <member name="T:StateMachineToolkit.ExceptionEventArgs">
+            <summary>
+            Represents information about the ExceptionOccurred event.
+            </summary>
+        </member>
+        <member name="M:StateMachineToolkit.ExceptionEventArgs.#ctor(System.Exception)">
+            <summary>
+            Initializes a new instance of the ExceptionEventArgs class with the
+            specified exception.
+            </summary>
+            <param name="ex">
+            The exception that occurred.
+            </param>
+        </member>
+        <member name="P:StateMachineToolkit.ExceptionEventArgs.Exception">
+            <summary>
+            Gets the exception that occurred.
+            </summary>
+        </member>
+        <member name="T:StateMachineToolkit.ActionHandler">
+            <summary>
+            Represents the method that will perform an action during a state 
+            transition.
+            </summary>
+        </member>
+        <member name="T:StateMachineToolkit.GuardHandler">
+            <summary>
+            Represents the method that is evaluated to determine whether the state
+            transition should fire.
+            </summary>
+        </member>
+        <member name="T:StateMachineToolkit.EntryHandler">
+            <summary>
+            Represents the method that is called when a state is entered.
+            </summary>
+        </member>
+        <member name="T:StateMachineToolkit.ExitHandler">
+            <summary>
+            Represents the method that is called when a state is exited.
+            </summary>
+        </member>
+        <member name="T:StateMachineToolkit.HistoryType">
+            <summary>
+            Specifies constants defining the type of history a state uses.
+            </summary>
+            <remarks>
+            A state's history type determines which of its nested states it enters 
+            into when it is the target of a transition. If a state does not have 
+            any nested states, its history type has no effect.
+            </remarks>
+        </member>
+        <member name="F:StateMachineToolkit.HistoryType.None">
+            <summary>
+            The state enters into its initial state which in turn enters into
+            its initial state and so on until the innermost nested state is 
+            reached.
+            </summary>
+        </member>
+        <member name="F:StateMachineToolkit.HistoryType.Shallow">
+            <summary>
+            The state enters into its last active state which in turn enters 
+            into its initial state and so on until the innermost nested state
+            is reached.
+            </summary>
+        </member>
+        <member name="F:StateMachineToolkit.HistoryType.Deep">
+            <summary>
+            The state enters into its last active state which in turns enters
+            into its last active state and so on until the innermost nested
+            state is reached.
+            </summary>
+        </member>
+        <member name="T:StateMachineToolkit.State">
+            <summary>
+            Represents a state of the state machine.
+            </summary>
+        </member>
+        <member name="M:StateMachineToolkit.State.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the State class with the specified
+            number of events it will handle.
+            </summary>
+            <param name="eventCount">
+            The number of events the State will handle.
+            </param>
+        </member>
+        <member name="M:StateMachineToolkit.State.#ctor(System.Int32,StateMachineToolkit.EntryHandler)">
+            <summary>
+            Initializes a new instance of the State class with the specified
+            number of events it will handle as well as its entry action.
+            </summary>
+            <param name="eventCount">
+            The number of events the State will handle.
+            </param>
+            <param name="entryHandler">
+            The entry action.
+            </param>
+        </member>
+        <member name="M:StateMachineToolkit.State.#ctor(System.Int32,StateMachineToolkit.ExitHandler)">
+            <summary>
+            Initializes a new instance of the State class with the specified
+            number of events it will handle as well as its exit action.
+            </summary>
+            <param name="eventCount">
+            The number of events the State will handle.
+            </param>
+            <param name="exitHandler">
+            The exit action.
+            </param>
+        </member>
+        <member name="M:StateMachineToolkit.State.#ctor(System.Int32,StateMachineToolkit.EntryHandler,StateMachineToolkit.ExitHandler)">
+            <summary>
+            Initializes a new instance of the State class with the specified
+            number of events it will handle as well as its entry and exit 
+            actions.
+            </summary>
+            <param name="eventCount">
+            The number of events the State will handle.
+            </param>
+            <param name="entryHandler">
+            The entry action.
+            </param>
+            <param name="exitHandler">
+            The exit action.
+            </param>
+        </member>
+        <member name="M:StateMachineToolkit.State.Dispatch(System.Object[])">
+            <summary>
+            Dispatches an event to the StateMachine.
+            </summary>
+            <param name="args">
+            The arguments accompanying the event.
+            </param>
+            <returns>
+            The resulting state of the transition.
+            </returns>
+        </member>
+        <member name="M:StateMachineToolkit.State.Entry">
+            <summary>
+            Enters the state.
+            </summary>
+        </member>
+        <member name="M:StateMachineToolkit.State.Exit">
+            <summary>
+            Exits the state.
+            </summary>
+        </member>
+        <member name="P:StateMachineToolkit.State.Substates">
+            <summary>
+            Gets the collection of substates.
+            </summary>
+        </member>
+        <member name="P:StateMachineToolkit.State.Transitions">
+            <summary>
+            Gets the collection of transitions.
+            </summary>
+        </member>
+        <member name="P:StateMachineToolkit.State.Superstate">
+            <summary>
+            Gets or sets the superstate.
+            </summary>
+            <remarks>
+            If no superstate exists for this state, this property is null.
+            </remarks>
+        </member>
+        <member name="P:StateMachineToolkit.State.InitialState">
+            <summary>
+            Gets or sets the initial state.
+            </summary>
+            <remarks>
+            If no initial state exists for this state, this property is null.
+            </remarks>
+        </member>
+        <member name="P:StateMachineToolkit.State.HistoryType">
+            <summary>
+            Gets or sets the history type.
+            </summary>
+        </member>
+        <member name="P:StateMachineToolkit.State.Level">
+            <summary>
+            Gets the State's level in the State hierarchy.
+            </summary>
+        </member>
+        <member name="T:StateMachineToolkit.StateMachine">
+            <summary>
+            Represents the base class for all state machines.
+            </summary>
+        </member>
+        <member name="M:StateMachineToolkit.StateMachine.#ctor">
+            <summary>
+            Initializes a new instance of the StateMachine class.
+            </summary>
+        </member>
+        <member name="M:StateMachineToolkit.StateMachine.Send(System.Object[])">
+            <summary>
+            Sends an event to the StateMachine.
+            </summary>
+            <param name="eventID">
+            The event ID.
+            </param>
+            <param name="args">
+            The data accompanying the event.
+            </param>
+            <returns>
+            If the StateMachine is using an ISynchronizeInvoke for marshalling 
+            events, an IAsyncResult returned from calling the SynchronizedObject's 
+            BeginInvoke method; otherwise, null.
+            </returns>
+        </member>
+        <member name="M:StateMachineToolkit.StateMachine.SendSynchronously(System.Object[])">
+            <summary>
+            Sends events to the StateMachine synchronously.
+            </summary>
+            <param name="args">
+            The arguments accompanying the event.
+            </param>
+        </member>
+        <member name="M:StateMachineToolkit.StateMachine.Initialize(StateMachineToolkit.State)">
+            <summary>
+            Initializes the StateMachine's initial state.
+            </summary>
+            <param name="initialState">
+            The state that will initially receive events from the StateMachine.
+            </param>
+        </member>
+        <member name="M:StateMachineToolkit.StateMachine.Dispatch(System.Object[])">
+            <summary>
+            Dispatches events to the current state.
+            </summary>
+            <param name="eventID">
+            The event ID.
+            </param>
+            <param name="args">
+            The data accompanying the event.
+            </param>
+        </member>
+        <member name="M:StateMachineToolkit.StateMachine.OnExceptionOccurred(System.Exception)">
+            <summary>
+            Raises an event indicating that an exception has occurred.
+            </summary>
+            <param name="ex">
+            The exception object representing information about the exception.
+            </param>
+        </member>
+        <member name="E:StateMachineToolkit.StateMachine.ExceptionOccurred">
+            <summary>
+            Occurs when an exception takes place in the StateMachine.
+            </summary>
+        </member>
+        <member name="T:StateMachineToolkit.SubstateCollection">
+            <summary>
+            Represents a collection of substates.
+            </summary>
+        </member>
+        <member name="M:StateMachineToolkit.SubstateCollection.#ctor(StateMachineToolkit.State)">
+            <summary>
+            Initializes a new instance of the SubstateCollection with the 
+            specified owner.
+            </summary>
+            <param name="owner">
+            The owner of the collection.
+            </param>
+        </member>
+        <member name="M:StateMachineToolkit.SubstateCollection.Add(StateMachineToolkit.State)">
+            <summary>
+            Adds the specified State to the collection.
+            </summary>
+            <param name="substate">
+            The State to add to the collection.
+            </param>
+        </member>
+        <member name="M:StateMachineToolkit.SubstateCollection.Remove(StateMachineToolkit.State)">
+            <summary>
+            Removes the specified State from the collection.
+            </summary>
+            <param name="substate">
+            The State to remove from the collection.
+            </param>
+        </member>
+        <member name="T:StateMachineToolkit.Transition">
+            <summary>
+            Represents a transition from one state to another.
+            </summary>
+        </member>
+        <member name="M:StateMachineToolkit.Transition.#ctor(StateMachineToolkit.State)">
+            <summary>
+            Initializes a new instance of the Transition class with the 
+            specified target.
+            </summary>
+            <param name="target">
+            The target state of the transition.
+            </param>
+        </member>
+        <member name="M:StateMachineToolkit.Transition.#ctor(StateMachineToolkit.ActionHandler,StateMachineToolkit.State)">
+            <summary>
+            Initializes a new instance of the Transition class with the 
+            specified action and target.
+            </summary>
+            <param name="action">
+            The action to perform during the transition.
+            </param>
+            <param name="target">
+            The target state of the transition.
+            </param>
+        </member>
+        <member name="M:StateMachineToolkit.Transition.#ctor(StateMachineToolkit.GuardHandler,StateMachineToolkit.State)">
+            <summary>
+            Initializes a new instance of the Transition class with the 
+            specified guard and target.
+            </summary>
+            <param name="guard">
+            The guard to test to determine whether the transition should take 
+            place.
+            </param>
+            <param name="target">
+            The target state of the transition.
+            </param>
+        </member>
+        <member name="M:StateMachineToolkit.Transition.#ctor(StateMachineToolkit.GuardHandler,StateMachineToolkit.ActionHandler)">
+            <summary>
+            Initializes a new instance of the Transition class with the 
+            specified guard and action.
+            </summary>
+            <param name="guard">
+            The guard to test to determine whether the transition should take 
+            place.
+            </param>
+            <param name="action">
+            The action to perform during the transition.
+            </param>
+        </member>
+        <member name="M:StateMachineToolkit.Transition.#ctor(StateMachineToolkit.ActionHandler)">
+            <summary>
+            Initializes a new instance of the Transition class with the 
+            specified action.
+            </summary>
+            <param name="action">
+            The action to perform during the transition.
+            </param>
+        </member>
+        <member name="M:StateMachineToolkit.Transition.#ctor(StateMachineToolkit.GuardHandler,StateMachineToolkit.ActionHandler,StateMachineToolkit.State)">
+            <summary>
+            Initializes a new instance of the Transition class with the 
+            specified guard, action, and target.
+            </summary>
+            <param name="guard">
+            The guard to test to determine whether the transition should take 
+            place.
+            </param>
+            <param name="action">
+            The action to perform during the transition.
+            </param>
+            <param name="target">
+            The target state of the transition.
+            </param>
+        </member>
+        <member name="M:StateMachineToolkit.Transition.ShouldFire(System.Object[])">
+            <summary>
+            Returns a value indicating whether or not the transition should fire.
+            </summary>
+            <param name="args">
+            The arguments for evaluating whether or not the transition should fire.
+            </param>
+            <returns>
+            <b>true</b> if the transition should fire; otherwise, <b>false</b>.
+            </returns>
+        </member>
+        <member name="M:StateMachineToolkit.Transition.PerformAction(System.Object[])">
+            <summary>
+            Performs the transition action.
+            </summary>
+            <param name="args">
+            The arguments the action uses.
+            </param>
+            <returns>
+            If an exception was thrown by the action, the exception object 
+            thrown; otherwise, null.
+            </returns>
+        </member>
+        <member name="P:StateMachineToolkit.Transition.Guard">
+            <summary>
+            Gets the guard to test to determine if the transition should take 
+            place.
+            </summary>
+            <remarks>
+            If no guard is necessary, this value may be null.
+            </remarks>
+        </member>
+        <member name="P:StateMachineToolkit.Transition.Action">
+            <summary>
+            Gets the action to perform during the transition.
+            </summary>
+            <remarks>
+            If no action is necessary, this value may be null.
+            </remarks>
+        </member>
+        <member name="P:StateMachineToolkit.Transition.Target">
+            <summary>
+            Gets the target of the transition.
+            </summary>
+        </member>
+        <member name="T:StateMachineToolkit.TransitionCollection">
+            <summary>
+            Represents a collection of Transitions.
+            </summary>
+        </member>
+        <member name="M:StateMachineToolkit.TransitionCollection.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the TransitionCollection class with 
+            the specified number of events.
+            </summary>
+            <param name="eventCount">
+            The number of events for which the collection can hold events.
+            </param>
+        </member>
+        <member name="M:StateMachineToolkit.TransitionCollection.Add(System.Int32,StateMachineToolkit.Transition)">
+            <summary>
+            Adds a Transition to the collection for the specified event ID.
+            </summary>
+            <param name="eventID">
+            The event ID associated with the Transition.
+            </param>
+            <param name="trans">
+            The Transition to add.
+            </param>
+            <remarks>
+            When a Transition is added to the collection, it is associated with
+            the specified event ID. When a State receives an event, it looks up
+            the event ID in its TransitionCollection to see if there are any 
+            Transitions for the specified event. 
+            </remarks>
+        </member>
+        <member name="M:StateMachineToolkit.TransitionCollection.Remove(System.Int32,StateMachineToolkit.Transition)">
+            <summary>
+            Removes the specified Transition at the specified event ID.
+            </summary>
+            <param name="eventID">
+            The event ID associated with the Transition.
+            </param>
+            <param name="trans">
+            The Transition to remove.
+            </param>
+        </member>
+        <member name="M:StateMachineToolkit.TransitionCollection.CopyTo(System.Array,System.Int32)">
+            <summary>
+            Copies the elements of the collection to an Array, starting at a 
+            particular Array index.
+            </summary>
+            <param name="array">
+            The one-dimensional Array that is the destination of the elements 
+            copied from ICollection. The Array must have zero-based indexing. 
+            </param>
+            <param name="index">
+            The zero-based index in array at which copying begins. 
+            </param>
+        </member>
+        <member name="M:StateMachineToolkit.TransitionCollection.GetEnumerator">
+            <summary>
+            Returns an enumerator that can iterate through a collection.
+            </summary>
+            <returns>
+            An enumerator that can iterate through a collection.
+            </returns>
+        </member>
+        <member name="P:StateMachineToolkit.TransitionCollection.Item(System.Int32)">
+            <summary>
+            Gets a collection of Transitions at the specified event ID.
+            </summary>
+            <remarks>
+            If there are no Transitions at the specified event ID, the value
+            of the collection will be null.
+            </remarks>
+        </member>
+        <member name="P:StateMachineToolkit.TransitionCollection.IsSynchronized">
+            <summary>
+            Gets a value indicating whether or not the collection is 
+            synchronized.
+            </summary>
+        </member>
+        <member name="P:StateMachineToolkit.TransitionCollection.Count">
+            <summary>
+            Gets the number of transition tables in the collection.
+            </summary>
+        </member>
+        <member name="P:StateMachineToolkit.TransitionCollection.SyncRoot">
+            <summary>
+            Gets an object that can be used to synchronize access to the 
+            collection.
+            </summary>
+        </member>
+    </members>
+</doc>
